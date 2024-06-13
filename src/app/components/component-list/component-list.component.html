@@ -1,1 +1,19 @@
-<p>component-list works!</p>
+<mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+
+<div class="container" *ngIf="!loading">
+    
+    <h2>Pokedex of Kanto</h2>
+    <button mat-flat-button color="primary" (click)="changeToTable()">Table</button>
+    <button mat-flat-button color="primary" (click)="changeToCards()">Card</button>
+    <hr>
+    <app-grid [pokedex]="pokedexList" *ngIf="tableDisplay" ></app-grid>
+
+    <div class="flex-list "  *ngIf="!tableDisplay">
+      
+          <app-card *ngFor="let item of pokedexList"
+          [pokedex_entry]="item"></app-card>
+    </div>
+    
+</div>
+  
+  

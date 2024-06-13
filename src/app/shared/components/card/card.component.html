@@ -1,0 +1,10 @@
+<mat-card class="card-pokemon red-color" [routerLink]="['/pokemon',pokedex_entry.entry_number]">
+    <mat-card-header>
+      <mat-card-title>{{pokedex_entry.pokemon_species.name}}</mat-card-title>
+      <mat-card-subtitle>#{{pokedex_entry.entry_number}}</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-actions>
+        <span >More Info </span><mat-icon>link</mat-icon>
+    </mat-card-actions>
+  </mat-card>

@@ -1,0 +1,46 @@
+button {
+    max-width: 36px;
+    max-height: 36px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.detail-pokemon {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.detail-content,
+.pokemon-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sprites {
+    background-color: #58b2e2;
+    border-radius: 10px;
+    display: flex;
+    max-width: 500px;
+    justify-content: space-around;
+}
+
+.pokemon-data {
+    margin-top: 1rem;
+    background-color: #7caf8a;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+.stats {
+    width: auto;
+}
+
+.details {
+    width: fit-content;
+}

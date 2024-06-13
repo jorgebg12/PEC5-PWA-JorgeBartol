@@ -1,1 +1,61 @@
-<p>component-detail works!</p>
+<mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
+
+<div *ngIf="!loading">
+    <mat-toolbar color="accent">    
+        <h2>{{pokemon.name | uppercase}}</h2>
+        <span class="spacer"></span>
+        <button mat-fab color="primary" aria-label="Example icon button with a home icon" (click)="goHomePage()">
+            <mat-icon>home</mat-icon>
+        </button>
+    </mat-toolbar>
+    
+    <div class="container">
+        
+        <div class="detail-pokemon">
+            <div class="details">
+                <mat-accordion >
+                    <mat-expansion-panel (opened)="panelOpenState = true" 
+                                         (closed)="panelOpenState = false" 
+                                        class="red-color">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{pokemon.name | uppercase}}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                 {{panelOpenState ? 'Hide all details' : 'Show all details'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+    
+                        <div class="detail-content">
+                            
+                            <div class="sprites">
+                                <img src="{{pokemon.sprites.front_default}}" alt="Pokemon Image">
+                                <img src="{{pokemon.sprites.back_default}}" alt="Pokemon Image">
+                                <img src="{{pokemon.sprites.front_shiny}}" alt="Pokemon Image">
+                                <img src="{{pokemon.sprites.back_shiny}}" alt="Pokemon Image">
+                            </div>
+    
+    
+                            <div class="pokemon-data">
+    
+                                <p>Name: {{pokemon.name}}</p>
+                                <p>Number: #{{pokemon.id}}</p>
+                                <div>
+                                    <span *ngFor="let stat of pokemon.stats">{{stat.stat.name}}:{{stat.base_stat}} /</span>
+                                    <span> Total: {{totalStats()}}</span>
+                                </div>
+                                <div>
+                                    <span> Types: </span>
+                                    <span *ngFor="let type of pokemon.types"> {{type.type.name}}</span>
+                                </div>
+    
+                            </div>
+                            
+                        </div>
+    
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+</div>

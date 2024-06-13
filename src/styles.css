@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 60%;
+}
+
+.flex-list {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card-pokemon {
+    width: 300px;
+    text-align: center;
+    align-items: center;
+}
+
+.red-color {
+    background: #db3934 !important;
+    color: black !important;
+}
